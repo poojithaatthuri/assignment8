@@ -2,7 +2,6 @@ package com.bridzelabs;
 import java.util.Random;
 public class employeeWage {
 
-
     public static void main(String[] args) {
         System.out.println("Welcom to Employee Wage Computation Program");
         Random random = new Random();
@@ -29,6 +28,10 @@ public class employeeWage {
         }
     }
 }
+
+
+
+
 
 
 
