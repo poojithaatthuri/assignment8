@@ -1,44 +1,41 @@
 package com.bridzelabs;
 import java.util.Random;
 public class employeeWage {
-
+    public static final int IS_PART_TIME = 1;
+    public static final int IS_FULL_TIME = 2;
+    public static final int EMP_RATE_PER_HOUR = 20;
+    public static final int NUM_OF_WORKING_DAYS = 2;
+    public static final int MAX_HRS_IN_MONTH = 10;
 
         public static void main(String[] args){
-            System.out.println("Welcom to Employee Wage Computation Program");
-            Random random = new Random();
-            int wagePerHour=20;
-            int fullDayHours=8;
-            int partTimeHours=4;
-            int wagePerDay = 0;
-            int monthlySalary = 0;
-            int monthlyHours = 0;
-            int days = 0;
-            while (monthlyHours<= 100 && days<= 20){
+            int emphrs=0,totalemphrs=0,totalworkingdays=0,totalEmpWages;
+            while (totalemphrs<= MAX_HRS_IN_MONTH && totalworkingdays<NUM_OF_WORKING_DAYS ){
+                totalworkingdays++;
+                int empcheck=(int) Math.floor(Math.random()*10)%3;
 
-                int attendance = random.nextInt(3);
-                wagePerDay=0;
-                switch (attendance) {
-                    case 0:
-                        System.out.println("Employee Absent..");
-                        monthlyHours=monthlyHours + partTimeHours;
+                switch (empcheck) {
+                    case IS_PART_TIME:
+                        emphrs=4;
                         break;
-                    case 1:
-                        wagePerDay = partTimeHours * wagePerHour;
+                    case IS_FULL_TIME:
+                        emphrs=8;
                         break;
                     default:
-                        wagePerDay = fullDayHours * wagePerHour;
-                        monthlyHours = monthlyHours + fullDayHours;
+                        emphrs=0;
                 }
-                monthlySalary = monthlySalary + wagePerDay ;
+                totalemphrs+=emphrs;
+                System.out.println("Days:"+totalworkingdays+"Emp hr:"+emphrs);
             }
-
-
+            //return emphrs;
         }
+
+    //private int totalemphrs;
+    //int totalEmpWage = totalemphrs * EMP_RATE_PER_HOUR;
+        //System.out.println("Total Emp Wage: " + totalEmpWages);
+
+    //public static void main(String[] args) {
+//
     }
-
-
-
-
 
 
 
